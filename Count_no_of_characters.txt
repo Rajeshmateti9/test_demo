@@ -1,0 +1,29 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+class Count extends React.Component
+{
+    constructor(props){
+      super(props);
+      this.state={
+        message:''
+      };
+    }
+    onMessageChange(text){
+      this.setState({
+        message:'Message has'+text.length+' number of characters'
+      })
+    }
+    render(){
+      return <div>
+        <h2> welcome</h2>
+        <p> enter message : <input type="text" onChange={e=>this.onMessageChange(e.target.value)}></input>
+        </p>
+        <p>
+    <lable>{this.state.message}</lable>
+        </p>
+      </div>
+    }
+
+}
+const element=<Count></Count>
+ReactDOM.render(element,document.getElementById("root"));
